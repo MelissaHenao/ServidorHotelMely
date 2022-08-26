@@ -68,6 +68,17 @@ export class controladorReserva {
             response.status(200).json({
                 mensaje:""
             })
+        }catch(error){
+            response.status(400).json({})
+        }
+    }
+
+    eliminarReserva(request,response){
+        try{
+            response.status(200).json({})
+        } catch(error){
+
+            response.status(400).json({})
         }
     }
 }

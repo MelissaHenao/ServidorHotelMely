@@ -39,4 +39,4 @@ const Reserva = new Schema({
 
 //crear modelo(estructur que encierra un esquema, adicionalmente permite crear consultas(solo tiene esquemas y consultas)) en base a el esquema
 
-const modeloReserva = mongoose.model('reserva',Reserva)
+export const modeloReserva = mongoose.model('reserva',Reserva)

@@ -1,4 +1,4 @@
-import {modeloHabitacion} from '../models/modeloDatosHabitacion.js'
+import {modeloReserva} from '../models/modeloDatosReserva.js'
 
  export class ServicioHabitacion{
 
@@ -6,21 +6,26 @@ import {modeloHabitacion} from '../models/modeloDatosHabitacion.js'
 //metodos de la clase por eso no se encierran en fuction 
     async buscarTodas(){
         //para almacenar todas las habitaciones que me van a llegar 
-        let habitaciones=await modeloHabitacion.find()
+        let reservas=await modeloReserva.find()
         return habitaciones
     }
 
-    async buscarPorId(id){
-        let habitacion = await modeloHabitacionq.findById(id)
+    async buscarPorId(ownerId){
+        let reserva= await modeloReserva.findById(ownerId)
         return habitacion
     }
 
-    async agregar(datos){
+    async agregar(datosC){
 
-        let habitacionAGuardar = new modeloHabitacion (datos)
-        return await habitacionAGuardar.save()
+        let reservaAGuardar = new modeloReserva(datosC)
+        return await reservaAGuardar.save()
     }
 
-    async actualizar(id,datos){
-        return modeloHabitacion.findByIdAndUpdate()
+    async actualizar(ownerId,datosC){
+        return modeloReserva.findByIdAndUpdate()
     }
+
+    async eliminar(ownerId){
+        return modeloReserva.findByIdAndDelete()
+    }
+ }
