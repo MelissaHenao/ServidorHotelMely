@@ -25,7 +25,7 @@ rutas.put('/viajescomfama/v1/habitacion/:id',controladorHabitacion.editarHabitac
 
 
 //Rutas (endpoint) para los servicios asociados a las reservas
-rutas.get('viajescomfama/v1/reserva,',function (req, res) { //este es un endpoint para buscar reserva
+/*rutas.get('viajescomfama/v1/reserva,',function (req, res) { //este es un endpoint para buscar reserva
     
  res.send('Hello World')
 })
@@ -46,4 +46,4 @@ rutas.put('viajescomfama/v1/reserva/id',function (req, res) {
 rutas.delete('viajescomfama/v1/reserva/id',function (req, res) {
     
   res.send('Hello World')
-})
+})*/

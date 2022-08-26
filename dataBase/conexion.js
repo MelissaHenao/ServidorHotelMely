@@ -10,6 +10,7 @@ import mongoose from 'mongoose'
     try{
         //el await es como una promesa(con este pedaso de cofigo me estoy conectando a la base de datos)
         await mongoose.connect(process.env.DATABASE);
+        console.log("conectadosssss")
     }catch(error){
 
         console.log("upss " +error)
