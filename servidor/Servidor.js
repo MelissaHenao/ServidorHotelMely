@@ -18,6 +18,7 @@ import {conectar} from '../dataBase/conexion.js'
         this.app = express() // definiendo un atributo(variable), pero como es un atributo, ya no se llama const app como se programo en app.js, si no this.app
         //clase conjunto de variables(atributos) y funciones(metodos) que estan desribiendo algo
         this.habilitarBody()
+        this.conectarConBd()
         this.atenderPeticiones() //atiendo las peticiones del usuario
      
     }
