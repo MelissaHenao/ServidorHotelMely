@@ -2,8 +2,12 @@
 //en este archivo SE ENRUTAN O ATIENDEN LAS PETICIONES
 import express from 'express' //nueva forma para traer express 
 //importar el controlador de habitaciones (como es algo mio, lo coloco entre llaves)
+
 import {ControladorHabitacion} from "../controllers/ControladorHabitacion.js" //para llamar la clase, debo instanciarla e instanciarla es crear un objeto
+import {ControladorReserva} from "../controllers/ControladorReserva.js"
+
 let controladorHabitacion=new ControladorHabitacion()
+let controladorReserva = new ControladorReserva()
 //si yo traigo a express puedo crear una variable para personalizar las rutas (end point) de mis servicios
 //como se observa a continuacion 
 
@@ -47,3 +51,7 @@ rutas.delete('viajescomfama/v1/reserva/id',function (req, res) {
     
   res.send('Hello World')
 })*/
+rutas.get('/viajescomfama/v1/reservas', controladorReserva.consultarRespuesta)
+rutas.get('/viajescomfama/v1/reserva/:id',controladorReserva.consultarReservaPorId)
+rutas.post('/viajescomfama/v1/reserva',controladorReserva.agregarReserva)
+rutas.post('/viajescomfama/v1/reserva',controladorReserva.editarReserva)

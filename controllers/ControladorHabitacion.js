@@ -10,7 +10,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
     constructor(){}
 
     //buscar habitaciones
-    buscarHabitaciones(request,response){
+   async buscarHabitaciones(request,response){
         //llamo a un servicio, para llamar al servicio debo usar una clase
 
         let servicioHabitacion = new ServicioHabitacion
@@ -19,7 +19,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
             
             response.status(200).json({
                 mensaje:"Exito en la consulta",
-                datos: servicioHabitacion.buscarTodas()
+                datos: await servicioHabitacion.buscarTodas()
             })
 
         } catch(error){
@@ -67,7 +67,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
     //agregar habitacion
     agregarHabitacion(request,response){
         
-        let cuerpo=Request.body
+        let cuerpo=request.body
 
           //llamo al servicio
           let servicioHabitacion = new ServicioHabitacion

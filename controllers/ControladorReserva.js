@@ -1,6 +1,6 @@
-import { ServicioReserva } from "../servicios/servicioHabitacion";
+import { ServicioReserva } from "../servicios/servicioHabitacion.js";
 
-export class controladorReserva {
+export class ControladorReserva {
 
     constructor(){}
 

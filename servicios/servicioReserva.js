@@ -4,28 +4,28 @@ import {modeloReserva} from '../models/modeloDatosReserva.js'
 
     constructor(){}
 //metodos de la clase por eso no se encierran en fuction 
-    async buscarTodas(){
+    async consultarRespuesta(){
         //para almacenar todas las habitaciones que me van a llegar 
         let reservas=await modeloReserva.find()
-        return habitaciones
+        return reservas
     }
 
-    async buscarPorId(ownerId){
+    async  consultarReservaPorId(ownerId){
         let reserva= await modeloReserva.findById(ownerId)
-        return habitacion
+        return reserva
     }
 
-    async agregar(datosC){
+    async agregarReserva(datosC){
 
         let reservaAGuardar = new modeloReserva(datosC)
         return await reservaAGuardar.save()
     }
 
-    async actualizar(ownerId,datosC){
-        return modeloReserva.findByIdAndUpdate()
+    async editarReserva(ownerId,datosC){
+        return modeloReserva.findByIdAndUpdate(ownerId,datosC)
     }
 
-    async eliminar(ownerId){
-        return modeloReserva.findByIdAndDelete()
+    async eliminarReserva(ownerId){
+        return modeloReserva.findByIdAndDelete(ownerId)
     }
  }
