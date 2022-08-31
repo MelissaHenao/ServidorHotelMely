@@ -54,5 +54,5 @@ rutas.delete('viajescomfama/v1/reserva/id',function (req, res) {
 rutas.get('/viajescomfama/reservas', controladorReserva.consultarRespuesta)
 rutas.get('/viajescomfama/reserva/:id',controladorReserva.consultarReservaPorId)
 rutas.post('/viajescomfama/reserva',controladorReserva.agregarReserva)
-rutas.put('/viajescomfama/reserva/id',controladorReserva.editarReserva)
-rutas.delete('/viajescomfama/reserva/id',controladorReserva.eliminarReserva)
+rutas.put('/viajescomfama/reserva/:id',controladorReserva.editarReserva)
+rutas.delete('/viajescomfama/reserva/:id',controladorReserva.eliminarReserva)
