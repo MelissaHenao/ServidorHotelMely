@@ -42,7 +42,7 @@ export class ControladorReserva {
     async agregarReserva(request,response){
         let cuerp= request.body
 
-        let servicioReserva = new ServicioReserva
+        let servicioReserva = new ServicioReserva()
 
         try{
             await servicioReserva.agregar(cuerp)
