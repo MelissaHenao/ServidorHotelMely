@@ -28,7 +28,7 @@ export class ControladorReserva {
         try{
             response.status(200).json({
                 mensaje:"Exito en la reserva" + identidad,
-                datos: await servicioReserva.consultarReservaPorId()
+                datos: await servicioReserva.consultarReservaPorId(identidad)
             })
         }catch(error){
 
