@@ -5,7 +5,7 @@ export class ControladorReserva {
     constructor(){}
 
     async consultarRespuesta(Request,response){
-        let servicioReserva = new servicioReserva
+        let servicioReserva = new ServicioReserva
 
         try{
             response.status(200).json({
