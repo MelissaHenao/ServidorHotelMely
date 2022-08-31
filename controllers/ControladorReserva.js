@@ -79,11 +79,11 @@ export class ControladorReserva {
     }
 
     async eliminarReserva(request,response){
-        let servicioReserva= new ServicioReserva
-        let ownerId = request.params.id
+        let servicioReserva= new ServicioReserva()
+        let id = request.params.id
 
         try{
-            await servicioReserva.eliminarReserva(ownerId)
+            await servicioReserva.eliminarReserva(id)
             response.status(200).json({
                 mensaje:"Exito eliminando reserva",
                 datos:null

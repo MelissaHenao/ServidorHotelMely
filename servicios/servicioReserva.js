@@ -25,7 +25,7 @@ import {modeloReserva} from '../models/modeloDatosReserva.js'
         return modeloReserva.findByIdAndUpdate(id,datosC)
     }
 
-    async eliminarReserva(ownerId){
-        return modeloReserva.findByIdAndDelete(ownerId)
+    async eliminarReserva(id){
+        return modeloReserva.findByIdAndDelete(id)
     }
  }
