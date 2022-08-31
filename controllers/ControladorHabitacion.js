@@ -34,7 +34,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
  
 
     //buscar habitacion por ID
-    buscarHabitacionPporId(request,response){
+    async buscarHabitacionPporId(request,response){
         ///recibi un parametro que se llama id que viene por la peticion y lo almacene en una variable que se llama identificador
         
     
@@ -47,7 +47,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
             
             response.status(200).json({
                 mensaje:"Exito en la consulta " + identificador,
-                datos: servicioHabitacion.buscarPorId()
+                datos: await servicioHabitacion.buscarPorId(identificador)
             })
 
         } catch(error){
@@ -65,7 +65,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
 
 
     //agregar habitacion
-    agregarHabitacion(request,response){
+    async agregarHabitacion(request,response){
         
         let cuerpo=request.body
 
@@ -73,7 +73,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
           let servicioHabitacion = new ServicioHabitacion
        
         try{
-            servicioHabitacion.agregar(cuerpo)
+           await servicioHabitacion.agregar(cuerpo)
             response.status(200).json({
                 mensaje:"Exito agregando la habitacion",
                 datos: null
@@ -93,7 +93,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
 
 //Lo primero que hace un controlador es esculcar la peticion
     //Editar habitacion
-    editarHabitacion(request,response){
+    async editarHabitacion(request,response){
 
         //recibir el id como parametro
         let id=request.params.id
@@ -107,7 +107,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
         
         //El controlador responde, le responde al cliente
         try{
-            servicioHabitacion.actualizar(id,datos)
+           await servicioHabitacion.actualizar(id,datos)
             response.status(200).json({
                 mensaje:"Exito editando habitacion" +id,
                 datos:null
@@ -124,7 +124,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
 
 
     //eliminar habitacion
-    elimarHabitacion(request,response){
+    async elimarHabitacion(request,response){
         try{
             
             response.status(200).json({})
