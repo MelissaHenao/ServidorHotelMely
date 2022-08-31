@@ -66,10 +66,14 @@ export class ControladorReserva {
         try{
             await servicioReserva.editarReserva(ownerId,datosC)
             response.status(200).json({
-                mensaje:""
+                mensaje:"Exito actualizando reserva"
             })
         }catch(error){
-            response.status(400).json({})
+            response.status(400).json({
+                mensaje: "Fallo actualizando reserva" + error,
+                datos:null
+            })
+            
         }
     }
 
