@@ -11,7 +11,7 @@ import {modeloHabitacion} from '../models/modeloDatosHabitacion.js'
     }
 
     async buscarPorId(id){
-        let habitacion = await modeloHabitacionq.findById(id)
+        let habitacion = await modeloHabitacion.findById(id)
         return habitacion
     }
 
