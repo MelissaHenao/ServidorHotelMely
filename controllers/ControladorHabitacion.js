@@ -116,7 +116,10 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
         } catch(error){
             
 
-            response.status(400).json({})
+            response.status(400).json({
+                mensaje:"Fallo en la consulta" + error,
+                datos:null
+            })
         }
     }
  
