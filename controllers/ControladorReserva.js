@@ -59,14 +59,14 @@ export class ControladorReserva {
     }
 
     async editarReserva(request,response){
-        let ownerId = request.params.id
+        let id = request.params.id
         let datosC = request.body
         let servicioReserva = new ServicioReserva 
 
         try{
-            await servicioReserva.editarReserva(ownerId,datosC)
+            await servicioReserva.editarReserva(id,datosC)
             response.status(200).json({
-                mensaje:"Exito actualizando reserva" + ownerId,
+                mensaje:"Exito actualizando reserva" + id,
                 datos:null
             })
         }catch(error){

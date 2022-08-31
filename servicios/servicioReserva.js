@@ -22,7 +22,7 @@ import {modeloReserva} from '../models/modeloDatosReserva.js'
     }
 
     async editarReserva(ownerId,datosC){
-        return modeloReserva.findByIdAndUpdate(ownerId,datosC)
+        return modeloReserva.findByIdAndUpdate(id,datosC)
     }
 
     async eliminarReserva(ownerId){
