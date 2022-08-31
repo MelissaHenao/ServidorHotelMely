@@ -23,12 +23,12 @@ export class ControladorReserva {
     async consultarReservaPorId(request,response){
         let identidad = request.params.id
 
-        let ServicioReserva = new ServicioReserva
+        let servicioReserva = new ServicioReserva
 
         try{
             response.status(200).json({
                 mensaje:"Exito en la reserva" + identidad,
-                datos: await servicioReserva.buscarPorId()
+                datos: await servicioReserva.consultarReservaPorId()
             })
         }catch(error){
 
@@ -42,10 +42,10 @@ export class ControladorReserva {
     async agregarReserva(request,response){
         let cuerp= request.body
 
-        let servicioReserva = new ServicioReserva()
+        let servicioReserva = new ServicioReserva
 
         try{
-            await servicioReserva.agregar(cuerp)
+            await servicioReserva.agregarReserva(cuerp)
             response.status(200).json({
                 mensaje:"exito agregando reserva",
                 datos:null
@@ -64,7 +64,7 @@ export class ControladorReserva {
         let servicioReserva = new ServicioReserva
 
         try{
-            await servicioReserva.actualizar(ownerId,datosC)
+            await servicioReserva.editarReserva(ownerId,datosC)
             response.status(200).json({
                 mensaje:""
             })
