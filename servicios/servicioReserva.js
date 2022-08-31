@@ -21,7 +21,7 @@ import {modeloReserva} from '../models/modeloDatosReserva.js'
         return await reservaAGuardar.save()
     }
 
-    async editarReserva(ownerId,datosC){
+    async editarReserva(id,datosC){
         return modeloReserva.findByIdAndUpdate(id,datosC)
     }
 
