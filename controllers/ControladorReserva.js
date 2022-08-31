@@ -10,7 +10,7 @@ export class ControladorReserva {
         try{
             response.status(200).json({
                 mensaje:"Exito consultando reserva",
-                datos: await servicioReserva.consultarReserva()
+                datos: await servicioReserva.consultarRespuesta()
             })
         } catch (error){
             response.status(400).json({
