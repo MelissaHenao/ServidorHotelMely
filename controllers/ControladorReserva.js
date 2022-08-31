@@ -59,7 +59,7 @@ export class ControladorReserva {
     }
 
     async editarReserva(request,response){
-        let ownerId = request.params.id
+        let ownerId = request.params.ownerId
         let datosC = request.body
         let servicioReserva = new ServicioReserva
 
