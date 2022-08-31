@@ -4,13 +4,13 @@ export class ControladorReserva {
 
     constructor(){}
 
-    consultarRespuesta(Request,response){
+    async consultarRespuesta(Request,response){
         let servicioReserva = new servicioReserva
 
         try{
             response.status(200).json({
                 mensaje:"Exito consultando reserva",
-                datos:servicioReserva.consultarReserva()
+                datos: await servicioReserva.consultarReserva()
             })
         } catch (error){
             response.status(400).json({
@@ -20,7 +20,7 @@ export class ControladorReserva {
         }
     }
 
-    consultarReservaPorId(request,response){
+    async consultarReservaPorId(request,response){
         let identidad = request.params.id
 
         let ServicioReserva = new ServicioReserva
@@ -28,7 +28,7 @@ export class ControladorReserva {
         try{
             response.status(200).json({
                 mensaje:"Exito en la reserva" + identidad,
-                datos:servicioReserva.buscarPorId()
+                datos: await servicioReserva.buscarPorId()
             })
         }catch(error){
 
@@ -39,13 +39,13 @@ export class ControladorReserva {
         }
     }
 
-    agregarReserva(request,response){
+    async agregarReserva(request,response){
         let cuerp= request.body
 
         let servicioReserva = new ServicioReserva
 
         try{
-            servicioReserva.agregar(cuerp)
+            await servicioReserva.agregar(cuerp)
             response.status(200).json({
                 mensaje:"exito agregando reserva",
                 datos:null
@@ -58,13 +58,13 @@ export class ControladorReserva {
         }
     }
 
-    editarReserva(request,response){
+    async editarReserva(request,response){
         let ownerId = request.params.id
         let datosC = request.body
         let servicioReserva = new ServicioReserva
 
         try{
-            servicioReserva.actualizar(ownerId,datosC)
+            await servicioReserva.actualizar(ownerId,datosC)
             response.status(200).json({
                 mensaje:""
             })
@@ -73,7 +73,7 @@ export class ControladorReserva {
         }
     }
 
-    eliminarReserva(request,response){
+    async eliminarReserva(request,response){
         try{
             response.status(200).json({})
         } catch(error){
