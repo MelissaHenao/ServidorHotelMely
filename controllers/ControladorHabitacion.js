@@ -67,7 +67,7 @@ import {ServicioHabitacion} from '../servicios/servicioHabitacion.js'
     //agregar habitacion
     agregarHabitacion(request,response){
         
-        let cuerpo=8
+        let cuerpo=request.body
 
           //llamo al servicio
           let servicioHabitacion = new ServicioHabitacion

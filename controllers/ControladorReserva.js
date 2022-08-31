@@ -1,4 +1,4 @@
-import { ServicioReserva } from "../servicios/servicioHabitacion.js";
+import { ServicioReserva } from "../servicios/servicioReserva.js";
 
 export class ControladorReserva {
 

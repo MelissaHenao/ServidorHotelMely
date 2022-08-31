@@ -1,6 +1,6 @@
 import {modeloReserva} from '../models/modeloDatosReserva.js'
 
- export class ServicioHabitacion{
+ export class ServicioReserva{
 
     constructor(){}
 //metodos de la clase por eso no se encierran en fuction 
